@@ -1,0 +1,11 @@
+/* App.css */
+/* Resetting default Vite styles for #root to allow full-width layout */
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
