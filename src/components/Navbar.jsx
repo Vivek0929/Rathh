@@ -20,7 +20,7 @@ const Navbar = () => {
 
                     {/* Desktop Menu */}
                     <div className="hidden md:flex items-center space-x-8">
-                        <a href="#destinations" className="text-[#00ff00] font-medium">Destinations</a>
+                        <a href="#destinations" className="text-[#ff3838] font-medium">Destinations</a>
                         <a href="#ways-to-travel" className="text-[#ff3838] font-medium">Ways to travel</a>
                         <a href="#deals" className="text-[#ff3838] font-medium">Deals</a>
                         <a href="#about" className="text-[#ff3838] font-medium">About</a>
