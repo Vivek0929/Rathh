@@ -34,7 +34,7 @@ const destinations = [
     {
         id: 6,
         name: 'Banff National Park, Canada',
-        image: 'https://images.unsplash.com/photo-1572621034336-7c9b2de8c227?q=80&w=800&auto=format&fit=crop',
+        image: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?q=80&w=800&auto=format&fit=crop',
         alt: 'Banff National Park, Canada'
     }
 ];
