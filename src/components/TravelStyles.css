@@ -1,0 +1,80 @@
+.travel-styles-section {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #fafafa;
+    /* Slightly off-white to distinguish cards if needed, or white per design */
+    background-color: #ffffff;
+    /* Sticking to white based on the look */
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    color: #222;
+}
+
+.travel-styles-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    /* Add side padding for smaller screens */
+}
+
+.travel-style-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 2.5rem 1.5rem;
+    /* width managed by grid */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    /* Soft shadow */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.travel-style-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.icon-container {
+    margin-bottom: 1.5rem;
+}
+
+/* Ensure SVG stroke matches the red */
+.icon-container svg {
+    stroke: #e61919;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    color: #222;
+}
+
+.card-description {
+    font-size: 0.85rem;
+    color: #888;
+    line-height: 1.5;
+    margin: 0;
+    max-width: 200px;
+    /* Keep description confined */
+}
+
+@media (max-width: 768px) {
+    .travel-styles-container {
+        grid-template-columns: 1fr;
+    }
+
+    .travel-style-card {
+        width: 100%;
+        max-width: 300px;
+    }
+}

@@ -1,9 +1,11 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
+import TravelStyles from '../components/TravelStyles';
+
 const Home = () => {
     return (
         <div>
             <Navbar />
+            <TravelStyles />
         </div>
     );
 };

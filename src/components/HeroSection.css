@@ -1,0 +1,264 @@
+.hero-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    border-radius: 30px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    color: white;
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    margin: 0;
+}
+
+/* Search Bar Styles - Layered Look */
+.search-bar-container {
+    width: 95%;
+    max-width: 1200px;
+    z-index: 10;
+    margin-bottom: 2rem;
+    /* Create the main white background layer */
+    background: white;
+    padding: 0.8rem 2.5rem 0.8rem 1rem;
+    /* Large right padding to extend the layer */
+    border-radius: 50px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    /* Good shadow for lift */
+    border: 1px solid #f0f0f0;
+}
+
+.search-inputs-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 0.5rem;
+}
+
+/* Individual Groups */
+.search-input-group {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 1rem;
+    border-radius: 40px;
+    transition: background-color 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Hover Effect as requested */
+.search-input-group:hover {
+    background-color: #f9f9f9;
+    /* Subtle hover background */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    /* Subtle lift */
+}
+
+/* Destination: Left Side */
+.destination-group {
+    flex: 2;
+    min-width: 300px;
+    /* Ensure no border here, just blending in */
+    border: 1px solid transparent;
+}
+
+.destination-group:hover {
+    border: 1px solid #eee;
+    /* Show border on hover */
+}
+
+/* Dates: Middle */
+.dates-container {
+    display: flex;
+    gap: 1rem;
+    flex: 2;
+    margin: 0 1rem;
+}
+
+.date-group {
+    flex: 1;
+    border: 1px solid #eee;
+    /* Visible pill border for dates */
+    min-width: 140px;
+}
+
+.date-group:hover {
+    border-color: #ddd;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    /* Stronger hover as per request "on another layer" feel */
+}
+
+/* Inputs */
+.search-input-group input {
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: #444;
+    width: 100%;
+    background: transparent;
+    cursor: pointer;
+}
+
+.search-input-group input::placeholder {
+    color: #999;
+}
+
+/* Date Input Specifics */
+.date-input {
+    /* Hide native date picker icon if we want custom trigger, but keep functionality */
+    /* width: 0; height: 0; opacity: 0; position: absolute; */
+    /* Actually better to just overlay transparently or style it */
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.date-placeholder {
+    color: #999;
+    font-size: 0.95rem;
+    pointer-events: none;
+    /* Let clicks pass through */
+}
+
+/* When date is selected, show value? JS handles text input vs date input well usually. 
+   But simpler implementation here: just overlay text */
+
+/* Icons */
+.search-icon {
+    display: flex;
+    align-items: center;
+    color: #999;
+}
+
+/* Search Button */
+.search-btn-container {
+    padding-left: 1rem;
+    /* More space before button */
+}
+
+.search-btn {
+    background-color: #e61919;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 1rem 3rem;
+    /* Larger button */
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    transition: background-color 0.2s, transform 0.1s;
+    box-shadow: 0 4px 15px rgba(230, 25, 25, 0.3);
+}
+
+.search-btn:hover {
+    background-color: #d11515;
+    transform: translateY(-1px);
+}
+
+.search-icon-btn {
+    display: flex;
+    align-items: center;
+}
+
+
+/* CTA Button */
+.cta-container {
+    margin-top: 1rem;
+}
+
+.discover-btn {
+    background-color: #e61919;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 0.8rem 2rem;
+    height: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(230, 25, 25, 0.2);
+    transition: transform 0.3s;
+}
+
+.discover-btn:hover {
+    background-color: #d11515;
+    transform: translateY(-2px);
+}
+
+/* Media Queries */
+@media (max-width: 900px) {
+    .search-inputs-wrapper {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .dates-container {
+        width: 100%;
+        margin: 0;
+    }
+
+    .destination-group,
+    .date-group,
+    .search-btn {
+        width: 100%;
+    }
+
+    .search-bar-container {
+        border-radius: 20px;
+    }
+}

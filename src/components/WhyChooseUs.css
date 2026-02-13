@@ -1,0 +1,66 @@
+.why-choose-section {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.features-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1000px;
+    /* Slightly narrower than full width for better readability of 3 items */
+    margin: 0 auto;
+}
+
+.feature-card {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    padding: 2.5rem 2rem;
+    text-align: left;
+    /* Image shows text aligned left or center? Image shows LEFT align for text in this section */
+    transition: box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.feature-card:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+.icon-container-feature {
+    margin-bottom: 1.5rem;
+}
+
+/* Icons in this section seem to be black/dark grey outlines */
+.icon-container-feature svg {
+    stroke: #333;
+}
+
+.feature-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+.feature-description {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .features-container {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+
+    .feature-card {
+        align-items: center;
+        text-align: center;
+    }
+}
