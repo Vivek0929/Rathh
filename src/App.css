@@ -1,5 +1,6 @@
 /* App.css */
 /* Resetting default Vite styles for #root to allow full-width layout */
+@import "tailwindcss";
 #root {
   width: 100%;
   margin: 0;
