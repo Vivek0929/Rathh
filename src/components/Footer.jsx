@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.css';
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 
 const Footer = () => {
     return (
@@ -16,11 +17,10 @@ const Footer = () => {
                         Discover the world with curated small-group tours.
                     </p>
                     <div className="social-icons">
-                        {/* Using simple text placeholders for icons as per standard react-icons aren't available without install */}
-                        <a href="#" aria-label="Facebook">f</a>
-                        <a href="#" aria-label="Twitter">t</a>
-                        <a href="#" aria-label="Instagram">i</a>
-                        <a href="#" aria-label="LinkedIn">in</a>
+                        <a href="#" aria-label="Facebook"><FaFacebookF /></a>
+                        <a href="#" aria-label="Twitter"><FaTwitter /></a>
+                        <a href="#" aria-label="Instagram"><FaInstagram /></a>
+                        <a href="#" aria-label="LinkedIn"><FaLinkedinIn /></a>
                     </div>
                 </div>
 
