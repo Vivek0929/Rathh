@@ -88,9 +88,24 @@
     color: #E2211C;
 }
 
+
+
 @media (max-width: 768px) {
     .footer-container {
-        flex-direction: column;
-        gap: 3rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .brand-column {
+        flex: 1 1 100%;
+        max-width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    /* Company, Explore, Support columns side by side */
+    .footer-column:not(.brand-column) {
+        flex: 1 1 calc(33.333% - 1rem);
+        min-width: 0;
     }
 }
