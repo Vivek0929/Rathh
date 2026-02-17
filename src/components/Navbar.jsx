@@ -18,7 +18,7 @@ const Navbar = () => {
                     {/* Logo Section */}
                     <Link to='/'>
                         <div className="flex-shrink-0 flex items-center gap-1 cursor-pointer">
-                            <img src="src/assets/rathh-logo.svg" alt="logo" className='h-15' />
+                            <img src="https://res.cloudinary.com/dtozixle0/image/upload/v1771349043/rathh-logo_Red_j9eppj.svg" alt="logo" className='h-15' />
                             <span className="text-2xl font-bold text-[#E2211C]">Rathh</span>
                         </div>
                     </Link>

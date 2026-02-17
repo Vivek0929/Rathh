@@ -21,7 +21,6 @@ const HeroSection = () => {
                     muted
                     playsInline
                     className="hero-video"
-                    poster="https://images.pexels.com/photos/210186/pexels-photo-210186.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" // Fallback image
                 >
                     {/* Using a sample travel video from Pexels/Mixkit as placeholder */}
                     <source src="https://videos.pexels.com/video-files/3209828/3209828-hd_1920_1080_25fps.mp4" type="video/mp4" />
