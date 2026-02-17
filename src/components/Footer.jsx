@@ -11,7 +11,7 @@ const Footer = () => {
                 {/* Column 1: Brand & Social */}
                 <div className="footer-column brand-column">
                     <div className="footer-logo">
-                        <img src="src/assets/rathh-logo.svg" alt="logo" className='h-15' />
+                        <img src="https://res.cloudinary.com/dtozixle0/image/upload/v1771349043/rathh-logo_Red_j9eppj.svg" alt="logo" className='h-15' />
                         <span className="logo-text">Rathh</span>
                     </div>
                     <p className="footer-description">
