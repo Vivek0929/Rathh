@@ -8,7 +8,7 @@ const TravelStyles = () => {
             title: 'Adventure & Trekking',
             description: 'Explore rugged landscapes and exhilarating trails.',
             icon: (
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#e61919" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#E2211C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M8 3l4 8 5-5 5 15H2L8 3z" />
                 </svg>
             )
@@ -18,7 +18,7 @@ const TravelStyles = () => {
             title: 'Cultural Immersion',
             description: 'Dive deep into local traditions and heritage.',
             icon: (
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#e61919" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#E2211C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <circle cx="12" cy="12" r="10" />
                     <line x1="2" y1="12" x2="22" y2="12" />
                     <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
@@ -30,7 +30,7 @@ const TravelStyles = () => {
             title: 'Relaxing Escapes',
             description: 'Unwind in serene settings and luxurious stays.',
             icon: (
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#e61919" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#E2211C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                 </svg>
             )
@@ -40,7 +40,7 @@ const TravelStyles = () => {
             title: 'Wildlife Safaris',
             description: 'Encounter diverse wildlife in their natural habitats.',
             icon: (
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#e61919" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#E2211C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M2 22s2.5-4.5 10-4.5S22 22 22 22" />
                     <path d="M12 2a10 10 0 0 0-10 10c0 5 10 10 10 10s10-5 10-10A10 10 0 0 0 12 2z" />
                     <path d="M12 2v20" />
@@ -54,7 +54,7 @@ const TravelStyles = () => {
 
     // A simpler, cleaner leaf icon for Wildlife Safaris
     const leafIcon = (
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#e61919" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-leaf-icon lucide-leaf">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#E2211C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-leaf-icon lucide-leaf">
             <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.5 1.45 11a8 8 0 0 1-9.45 7z" />
             <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
         </svg>

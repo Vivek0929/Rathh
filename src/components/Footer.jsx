@@ -10,7 +10,7 @@ const Footer = () => {
                 {/* Column 1: Brand & Social */}
                 <div className="footer-column brand-column">
                     <div className="footer-logo">
-                        <span className="logo-icon">◎</span>
+                        <img src="src/assets/rathh-logo.svg" alt="logo" className='h-15' />
                         <span className="logo-text">Rathh</span>
                     </div>
                     <p className="footer-description">

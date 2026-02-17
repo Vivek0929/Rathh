@@ -32,7 +32,7 @@
     gap: 0.5rem;
     font-weight: bold;
     font-size: 1.5rem;
-    color: #ff3838;
+    color: #E2211C;
     margin-bottom: 1rem;
 }
 
@@ -57,7 +57,7 @@
 }
 
 .social-icons a:hover {
-    color: #ff3838;
+    color: #E2211C;
 }
 
 .footer-column h3 {
@@ -85,7 +85,7 @@
 }
 
 .footer-column ul li a:hover {
-    color: #ff3838;
+    color: #E2211C;
 }
 
 @media (max-width: 768px) {
