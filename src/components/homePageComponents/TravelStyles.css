@@ -21,6 +21,7 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
+
     /* Add side padding for smaller screens */
 }
 
@@ -71,6 +72,7 @@
 @media (max-width: 768px) {
     .travel-styles-container {
         grid-template-columns: 1fr;
+        justify-items: center;
     }
 
     .travel-style-card {

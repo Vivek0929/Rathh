@@ -1,6 +1,7 @@
 import React from 'react';
 import './Footer.css';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -28,11 +29,11 @@ const Footer = () => {
                 <div className="footer-column">
                     <h3>Company</h3>
                     <ul>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#careers">Careers</a></li>
-                        <li><a href="#press">Press</a></li>
-                        <li><a href="#blog">Blog</a></li>
-                    </ul>
+                        <li><Link to={'/about'}> About</Link></li>
+                        <li><Link to={'/Careera'}> Careers</Link> </li>
+                        <li> <Link to={'/press'}>Press</Link></li>
+                        <li><Link to={'/blog'} >Blog</Link> </li>
+                     </ul>
                 </div>
 
                 {/* Column 3: Explore */}
@@ -50,13 +51,12 @@ const Footer = () => {
                 <div className="footer-column">
                     <h3>Support</h3>
                     <ul>
-                        <li><a href="#faq">FAQ</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
-                        <li><a href="#privacy">Privacy Policy</a></li>
-                        <li><a href="#terms">Terms of Service</a></li>
+                        <li> <Link to={'/faq'}>FAQ</Link> </li>
+                        <li> <Link to={'/contact'}>ContactUs</Link> </li>
+                        <li> <Link to={'/privacy'}>Privacy Policy</Link> </li>
+                        <li> <Link to={'/terms'}>Terms of Service</Link> </li>
                     </ul>
                 </div>
-
             </div>
         </footer>
     );

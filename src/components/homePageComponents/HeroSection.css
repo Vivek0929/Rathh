@@ -178,15 +178,12 @@
 /* Icons */
 .search-icon {
     display: flex;
-    align-items: center;
+    align-items: left;
     color: #999;
 }
 
 /* Search Button */
-.search-btn-container {
-    padding-left: 1rem;
-    /* More space before button */
-}
+
 
 .search-btn {
     background-color: #E2211C;
@@ -212,7 +209,7 @@
 
 .search-icon-btn {
     display: flex;
-    align-items: center;
+    align-items: left;
 }
 
 

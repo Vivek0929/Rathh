@@ -1,0 +1,168 @@
+.contact-page-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #fdfdfd 0%, #f7f7f7 100%);
+    padding-bottom: 5rem;
+}
+
+.contact-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1423666639041-f56000c27a9a?auto=format&fit=crop&q=80&w=1920');
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    margin-bottom: -100px;
+}
+
+.contact-card-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 10;
+}
+
+.contact-glass-card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+}
+
+.contact-info-panel {
+    background-color: #E2211C;
+    padding: 3.5rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contact-form-panel {
+    padding: 3.5rem;
+    background: white;
+}
+
+.contact-form-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 2.5rem;
+}
+
+.contact-input-group {
+    margin-bottom: 1.5rem;
+}
+
+.contact-input-label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+.contact-input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #fcfcfc;
+}
+
+.contact-input:focus {
+    outline: none;
+    border-color: #E2211C;
+    box-shadow: 0 0 0 4px rgba(226, 33, 28, 0.1);
+    background: white;
+}
+
+.contact-submit-btn {
+    background-color: #E2211C;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.contact-submit-btn:hover {
+    background-color: #c41c17;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(226, 33, 28, 0.2);
+}
+
+.contact-submit-btn:active {
+    transform: translateY(0);
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.info-icon-box {
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-text h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+
+.info-text p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+@media (max-width: 968px) {
+    .contact-glass-card {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info-panel {
+        padding: 2.5rem;
+    }
+
+    .contact-form-panel {
+        padding: 2.5rem;
+    }
+
+    .contact-hero {
+        margin-bottom: -50px;
+    }
+}
+
+@media (max-width: 640px) {
+    .contact-hero h1 {
+        font-size: 2rem;
+    }
+
+    .contact-info-panel,
+    .contact-form-panel {
+        padding: 1.5rem;
+    }
+}

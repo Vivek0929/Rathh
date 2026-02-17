@@ -1,1 +1,8 @@
 /* Styles moved to Tailwind classes in Navbar.jsx */
+
+.btn-toggle{
+    background-color: white;
+    color: #E2211C;
+    border:none;
+    outline: none;
+}

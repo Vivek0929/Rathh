@@ -66,7 +66,7 @@ const TravelStyles = () => {
     return (
         <section className="travel-styles-section">
             <h2 className="section-title">Discover Your Travel Style</h2>
-            <div className="travel-styles-container">
+            <div className="travel-styles-container ">
                 {styles.map((style) => (
                     <div key={style.id} className="travel-style-card">
                         <div className="icon-container">

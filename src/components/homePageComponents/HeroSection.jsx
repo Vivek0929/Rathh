@@ -37,7 +37,7 @@ const HeroSection = () => {
             </div>
 
             {/* Search Bar Section - Layered Looks */}
-            <div className="search-bar-container">
+            <div className="search-bar-container ">
                 <div className="search-inputs-wrapper">
 
                     {/* Destination Input - Left Side */}
@@ -91,7 +91,7 @@ const HeroSection = () => {
                     </div>
 
                     {/* Search Button - Right Side */}
-                    <div className="search-btn-container">
+                    <div className="search-btn-container w-100 md:w-auto">
                         <button className="search-btn">
                             <span className="search-icon-btn">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
