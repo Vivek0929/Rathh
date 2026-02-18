@@ -27,7 +27,7 @@ const Navbar = () => {
                     <div className="hidden md:flex items-center space-x-8">
                         <a href="#destinations" className="text-[#E2211C] font-medium">Destinations</a>
                         <a href="#ways-to-travel" className="text-[#E2211C] font-medium">Ways to travel</a>
-                         <a href="#about" className="text-[#E2211C] font-medium">About</a>
+                         <a href="#about" className="text-[#E2211C] font-medium">About Us</a>
                         <a href="#my-bookings" className="text-[#E2211C] font-medium">My Bookings</a>
                     </div>
  
