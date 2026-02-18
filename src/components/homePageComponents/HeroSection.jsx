@@ -30,7 +30,7 @@ const HeroSection = () => {
                 {/* Dark overlay to make text readable */}
                 <div className="hero-overlay"></div>
 
-                <div className="hero-content">
+                <div className="hero-content text-2xl md:text-4xl lg:text-5xl font-bold text-white text-center">
                     <h1>Your Journey to<br />Unforgettable Experiences<br />Starts Here</h1>
                 </div>
             </div>
@@ -90,7 +90,7 @@ const HeroSection = () => {
                     </div>
 
                     {/* Search Button - Right Side */}
-                    <div className="search-btn-container w-80 md:w-auto ml-7">
+                    <div className="search-btn-container w-70 md:w-auto ml-7">
                         <button className="search-btn">
                             <span className="search-icon-btn">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
