@@ -53,7 +53,7 @@ const PopularDestinations = () => {
                             key={destination.id}
                             className="group cursor-pointer flex flex-col items-center"
                         >
-                            <div className="relative overflow-hidden rounded-2xl md:w-full md:h-full h-65 w-100 aspect-[4/3] mb-4 shadow-md transition-shadow hover:shadow-xl">
+                            <div className="relative overflow-hidden rounded-2xl md:w-full md:h-full h-65 w-90 aspect-[4/3] mb-4 shadow-md transition-shadow hover:shadow-xl">
                                 <img
                                     src={destination.image}
                                     alt={destination.alt}

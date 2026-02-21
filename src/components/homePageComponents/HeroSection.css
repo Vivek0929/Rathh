@@ -44,6 +44,7 @@
     text-align: center;
     width: 100%;
     z-index: 2;
+    font-family: 'Poppins', sans-serif;
 }
 
 .hero-content h1 {
@@ -241,21 +242,38 @@
     .search-inputs-wrapper {
         flex-direction: column;
         gap: 1rem;
-        padding: 1rem;
+        padding: 1.5rem 1rem;
     }
 
     .dates-container {
         width: 100%;
         margin: 0;
+        flex-direction: column;
+        gap: 0.8rem;
     }
 
-    .destination-group,
-    .date-group,
-    .search-btn {
+    .destination-group {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .date-group {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .search-btn-container {
         width: 100%;
     }
 
+    .search-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
     .search-bar-container {
+        width: 90%;
+        padding: 0;
         border-radius: 20px;
     }
 }
