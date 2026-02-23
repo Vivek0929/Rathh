@@ -87,25 +87,42 @@ const defaultDestinations = [
     },
 ];
 
-const DynaCards = ({ sortBy, setSortBy }) => {
+const getSortedDestinations = (destinations, sortBy) => {
+    const sorted = [...destinations];
+    switch (sortBy) {
+        case 'low':
+            return sorted.sort((a, b) => a.price - b.price);
+        case 'high':
+            return sorted.sort((a, b) => b.price - a.price);
+        case 'date':
+            return sorted.sort((a, b) => new Date(a.dates.split(' - ')[0]) - new Date(b.dates.split(' - ')[0]));
+        case 'popularity':
+        default:
+            return sorted.sort((a, b) => a.id - b.id);
+    }
+};
+
+const DynaCards = ({ sortBy, handleSortChange }) => {
+    const sortedDestinations = getSortedDestinations(defaultDestinations, sortBy);
+
     return (
         <div className="dyna-cards-wrapper">
             {/* Header */}
             <div className="dyna-cards-header">
                 <span className="dyna-results-count">
-                    Showing <strong>{defaultDestinations.length}</strong> results
+                    Showing <strong>{sortedDestinations.length}</strong> results
                 </span>
                 <div className="dyna-sort-wrapper">
                     <label htmlFor="sortBy">Sort by: </label>
                     <select
                         id="sortBy"
                         value={sortBy}
-                        onChange={(e) => setSortBy(e.target.value)}
+                        onChange={(e) => handleSortChange(e.target.value)}
                         className="dyna-sort-select"
                     >
                         <option value="popularity">Popularity</option>
-                        <option value="price-low">Price: Low to High</option>
-                        <option value="price-high">Price: High to Low</option>
+                        <option value="low">Price: Low to High</option>
+                        <option value="high">Price: High to Low</option>
                         <option value="date">Date</option>
                     </select>
                 </div>
@@ -113,7 +130,7 @@ const DynaCards = ({ sortBy, setSortBy }) => {
 
             {/* Cards Grid */}
             <div className="dyna-cards-grid">
-                {defaultDestinations.map((dest) => (
+                {sortedDestinations.map((dest) => (
                     <div key={dest.id} className="dyna-card">
                         <div className="dyna-card-image-wrapper">
                             <img src={dest.image} alt={dest.name} className="dyna-card-image" />

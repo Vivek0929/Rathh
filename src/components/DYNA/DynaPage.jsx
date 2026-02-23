@@ -19,6 +19,11 @@ const DynaPage = () => {
         console.log('Search:', { searchTerm, startDate, endDate });
     };
 
+  const handleSortChange = (sortOption) => {
+    console.log('Sort option:', sortOption);
+    setSortBy(sortOption);
+  };
+
     const handleClearAll = () => {
         setSelectedDestinations([]);
         setSelectedDurations([]);
@@ -76,7 +81,7 @@ const DynaPage = () => {
 
                 {/* Right: Cards Grid */}
                 <main className="dyna-content">
-                    <DynaCards sortBy={sortBy} setSortBy={setSortBy} />
+                    <DynaCards sortBy={sortBy}  handleSortChange={handleSortChange} />
                 </main>
             </div>
         </div>
