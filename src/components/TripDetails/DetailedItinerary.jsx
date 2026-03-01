@@ -44,7 +44,7 @@ const DetailedItinerary = ({ itinerary }) => {
                 {items.map((item, index) => (
                     <div key={index} className="itinerary-item">
                         <button className="itinerary-toggle">
-                            <span className="itinerary-day-label">{item.day}</span>
+                            <span className="itinerary-day-label text-[#E2211C]">{item.day}</span>
                             <span className="itinerary-day-title">{item.title}</span>
                             <span className="itinerary-chevron">&#8964;</span>
                         </button>

@@ -44,8 +44,8 @@ const BookingCard = ({ price, tripDates, tripName }) => {
             </div>
 
             {/* Book Now Button */}
-            <button className="booking-btn">
-                <span className="booking-btn-text">Book Now</span>
+            <button className="booking-btn text-[#E2211C]">
+                <span className="booking-btn-text ">Book Now</span>
                 <span className="booking-btn-arrow">→</span>
             </button>
 
