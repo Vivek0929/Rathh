@@ -1,0 +1,529 @@
+/* ============================================
+   TripDetails - Global CSS
+   Font: Inter from Google Fonts
+   Brand Orange: #E87832  (matches prototype)
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ── Variables ───────────────────────────── */
+:root {
+    --td-orange: #E87832;
+    --td-orange-light: #fff5ec;
+    --td-green: #22c55e;
+    --td-red: #ef4444;
+    --td-text: #1a1a1a;
+    --td-muted: #6b7280;
+    --td-border: #e5e7eb;
+    --td-bg: #f9fafb;
+    --td-white: #ffffff;
+    --td-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    --td-radius: 14px;
+    font-family: 'Inter', sans-serif;
+}
+
+/* ── Hero Image ──────────────────────────── */
+.trip-hero-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+    border-radius: var(--td-radius);
+    margin-bottom: 32px;
+}
+
+.trip-hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.trip-hero-image-wrapper:hover .trip-hero-image {
+    transform: scale(1.03);
+}
+
+.trip-hero-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 40px 32px 24px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.72) 0%, transparent 100%);
+    border-radius: 0 0 var(--td-radius) var(--td-radius);
+}
+
+.trip-hero-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--td-white);
+    margin: 0;
+    line-height: 1.3;
+}
+
+@media (max-width: 768px) {
+    .trip-hero-image-wrapper {
+        height: 240px;
+    }
+
+    .trip-hero-title {
+        font-size: 1.35rem;
+    }
+}
+
+/* ── Itinerary ───────────────────────────── */
+.itinerary-section {
+    margin-bottom: 40px;
+}
+
+.itinerary-heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--td-text);
+    margin-bottom: 20px;
+    font-family: 'Inter', sans-serif;
+}
+
+.itinerary-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.itinerary-item {
+    border: 1px solid var(--td-border);
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--td-white);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.itinerary-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+}
+
+.itinerary-day-label {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--td-orange);
+    white-space: nowrap;
+    min-width: 52px;
+}
+
+.itinerary-day-title {
+    flex: 1;
+    font-size: 0.97rem;
+    font-weight: 600;
+    color: var(--td-text);
+}
+
+.itinerary-chevron {
+    font-size: 1.2rem;
+    color: var(--td-muted);
+}
+
+.itinerary-body {
+    padding: 0 20px 16px 20px;
+    border-top: 1px solid var(--td-border);
+}
+
+.itinerary-description {
+    font-size: 0.92rem;
+    color: var(--td-muted);
+    line-height: 1.7;
+    margin: 12px 0 0;
+}
+
+/* ── Booking Card ────────────────────────── */
+.booking-card {
+    background: var(--td-white);
+    border: 1px solid var(--td-border);
+    border-radius: var(--td-radius);
+    box-shadow: var(--td-shadow);
+    padding: 24px;
+    position: sticky;
+    top: 90px;
+    font-family: 'Inter', sans-serif;
+}
+
+.booking-price-row {
+    margin-bottom: 16px;
+}
+
+.booking-price {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--td-text);
+}
+
+.booking-per-person {
+    font-size: 0.95rem;
+    color: var(--td-muted);
+    font-weight: 400;
+}
+
+.booking-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.booking-pill {
+    background: var(--td-orange-light);
+    color: var(--td-orange);
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 999px;
+    border: 1px solid #f4d3b4;
+}
+
+.booking-dates-title {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--td-text);
+    margin-bottom: 10px;
+}
+
+.booking-dates-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.booking-date-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--td-muted);
+}
+
+.booking-date-icon {
+    font-size: 0.9rem;
+}
+
+.booking-date-range {
+    flex: 1;
+}
+
+.booking-date-badge {
+    background: #dcfce7;
+    color: #16a34a;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 999px;
+}
+
+/* Book Now button — slides toward screen on hover */
+.booking-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--td-orange);
+    color: var(--td-white);
+    border: none;
+    border-radius: 10px;
+    padding: 14px 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.2s ease;
+    transform: perspective(400px) translateZ(0);
+    box-shadow: 0 4px 14px rgba(232, 120, 50, 0.35);
+    margin-bottom: 12px;
+}
+
+.booking-btn:hover {
+    transform: perspective(400px) translateZ(16px) scale(1.04);
+    box-shadow: 0 8px 28px rgba(232, 120, 50, 0.45);
+    background: #d4682a;
+}
+
+.booking-btn-arrow {
+    font-size: 1.2rem;
+    transition: transform 0.25s ease;
+}
+
+.booking-btn:hover .booking-btn-arrow {
+    transform: translateX(4px);
+}
+
+.booking-note {
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--td-muted);
+    margin: 0;
+}
+
+/* ── Includes / Excludes ─────────────────── */
+.inc-exc-section {
+    margin-bottom: 40px;
+}
+
+.inc-exc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+@media (max-width: 640px) {
+    .inc-exc-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.inc-exc-box {
+    background: var(--td-white);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid var(--td-border);
+}
+
+.inc-exc-heading {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--td-text);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Inter', sans-serif;
+}
+
+.inc-exc-icon {
+    font-size: 1rem;
+}
+
+.inc-icon {
+    color: var(--td-green);
+}
+
+.exc-icon {
+    color: var(--td-red);
+}
+
+.inc-exc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.inc-exc-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.88rem;
+    color: var(--td-muted);
+    line-height: 1.5;
+    font-family: 'Inter', sans-serif;
+}
+
+.inc-check {
+    color: var(--td-green);
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-top: 1px;
+    flex-shrink: 0;
+}
+
+.exc-cross {
+    color: var(--td-red);
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-top: 1px;
+    flex-shrink: 0;
+}
+
+/* ── Reviews ─────────────────────────────── */
+.reviews-section {
+    margin-bottom: 40px;
+}
+
+.reviews-heading {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--td-text);
+    margin-bottom: 20px;
+    font-family: 'Inter', sans-serif;
+}
+
+.reviews-count {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--td-muted);
+    margin-left: 6px;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.review-card {
+    background: var(--td-white);
+    border: 1px solid var(--td-border);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.review-card:hover {
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.10);
+    transform: translateY(-2px);
+}
+
+.review-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.review-traveler-photo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 2px solid var(--td-border);
+}
+
+.review-traveler-info {
+    flex: 1;
+}
+
+.review-traveler-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--td-text);
+    margin: 0 0 4px;
+    font-family: 'Inter', sans-serif;
+}
+
+.star-rating {
+    display: flex;
+    gap: 2px;
+}
+
+.star {
+    font-size: 1rem;
+}
+
+.star.filled {
+    color: #f59e0b;
+}
+
+.star.empty {
+    color: #d1d5db;
+}
+
+.review-date {
+    font-size: 0.78rem;
+    color: var(--td-muted);
+    white-space: nowrap;
+    font-family: 'Inter', sans-serif;
+}
+
+.review-text {
+    font-size: 0.88rem;
+    color: var(--td-muted);
+    line-height: 1.7;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+/* ── TripDetails Page Layout ─────────────── */
+.trip-details-page {
+    min-height: 100vh;
+    background: var(--td-bg);
+    font-family: 'Inter', sans-serif;
+}
+
+.trip-details-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 36px 24px 60px;
+}
+
+/* Trip meta breadcrumb / tags row */
+.trip-meta-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.trip-meta-tag {
+    font-size: 0.8rem;
+    color: var(--td-muted);
+    background: var(--td-white);
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--td-border);
+}
+
+.trip-meta-sep {
+    color: var(--td-border);
+}
+
+/* Main 2-col layout */
+.trip-details-layout {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 36px;
+    align-items: start;
+}
+
+@media (max-width: 900px) {
+    .trip-details-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-card {
+        position: static;
+    }
+}
+
+.trip-details-left {
+    min-width: 0;
+}
+
+.trip-details-right {
+    min-width: 0;
+}
+
+/* Place booking card ABOVE content on mobile */
+@media (max-width: 900px) {
+    .trip-details-layout {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .trip-details-right {
+        order: -1;
+    }
+}

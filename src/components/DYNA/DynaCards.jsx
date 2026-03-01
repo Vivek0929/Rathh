@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const defaultDestinations = [
     {
@@ -103,6 +104,7 @@ const getSortedDestinations = (destinations, sortBy) => {
 };
 
 const DynaCards = ({ sortBy, handleSortChange }) => {
+    const navigate = useNavigate();
     const sortedDestinations = getSortedDestinations(defaultDestinations, sortBy);
 
     return (
@@ -141,7 +143,12 @@ const DynaCards = ({ sortBy, handleSortChange }) => {
                         <div className="dyna-card-info">
                             <p className="dyna-card-dates">{dest.dates}</p>
                             <p className="dyna-card-price">${dest.price.toLocaleString()}</p>
-                            <button className="dyna-view-details-btn">View Details</button>
+                            <button
+                                className="dyna-view-details-btn"
+                                onClick={() => navigate(`/tripdetails/${dest.id}`)}
+                            >
+                                View Details
+                            </button>
                         </div>
                     </div>
                 ))}
