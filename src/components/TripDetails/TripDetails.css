@@ -116,7 +116,7 @@
 .itinerary-day-label {
     font-size: 0.92rem;
     font-weight: 700;
-    color: var(--td-orange);
+    color: #E2211C;
     white-space: nowrap;
     min-width: 52px;
 }
