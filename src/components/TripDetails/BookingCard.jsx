@@ -38,7 +38,7 @@ const BookingCard = ({ price, tripDates, tripName }) => {
             </div>
 
             {/* ── 3. Trip Dates Detail ── */}
-            <div className="booking-dates-section">
+            {/* <div className="booking-dates-section">
                 <div className="booking-dates-list">
                     {dates.map((d, i) => (
                         <div
@@ -54,7 +54,7 @@ const BookingCard = ({ price, tripDates, tripName }) => {
                         </div>
                     ))}
                 </div>
-            </div>
+            </div> */}
 
             {/* ── 4. Book Now Button ── */}
             <button className="booking-btn">
