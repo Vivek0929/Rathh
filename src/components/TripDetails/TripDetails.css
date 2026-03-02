@@ -230,6 +230,8 @@
     gap: 10px;
     background: #E2211C;
     color: var(--td-white);
+    background: white;
+    color: black;
     border: none;
     border-radius: 10px;
     padding: 14px 20px;
