@@ -6,7 +6,6 @@ const StarRating = ({ rating }) => {
         <div className="star-rating">
             {[1, 2, 3, 4, 5].map((star) => (
                 <span key={star} className={star <= rating ? 'star filled' : 'star empty'}>
-                    ★
                 </span>
             ))}
         </div>
@@ -15,19 +14,23 @@ const StarRating = ({ rating }) => {
 
 const ReviewCard = ({ travelerPhoto, travelerName, rating, reviewDate, reviewText }) => {
     return (
-        <div className="review-card">
-            <div className="review-card-header">
+        <div className="review-item">
+            {/* Header row: photo + name + stars + date */}
+            <div className="review-item-header">
                 <img
                     src={travelerPhoto || `https://i.pravatar.cc/60?u=${travelerName}`}
                     alt={travelerName}
                     className="review-traveler-photo"
                 />
-                <div className="review-traveler-info">
-                    <h4 className="review-traveler-name">{travelerName}</h4>
-                    <StarRating rating={rating} />
+                <div className="review-traveler-meta">
+                    <span className="review-traveler-name">{travelerName}</span>
+                    <div className="review-meta-row">
+                        <StarRating rating={rating} />
+                        <span className="review-date">{reviewDate}</span>
+                    </div>
                 </div>
-                <span className="review-date">{reviewDate}</span>
             </div>
+            {/* Review text full width */}
             <p className="review-text">{reviewText}</p>
         </div>
     );
@@ -39,25 +42,25 @@ const TravelerReviews = ({ reviews }) => {
             travelerPhoto: 'https://i.pravatar.cc/60?img=1',
             travelerName: 'Alice Johnson',
             rating: 5,
-            reviewDate: 'Nov 12, 2024',
+            reviewDate: 'July 15, 2023',
             reviewText:
-                'This was an absolutely incredible experience! Our guide was knowledgeable, friendly, and made every moment special. The Sahara night was unforgettable — the stars were stunning. I highly recommend this trip to anyone looking for an authentic Moroccan adventure!',
+                `An absolutely incredible journey! The itinerary was perfectly balanced, and our guide was exceptionally knowledgeable. The camel trek in the Sahara was a highlight I'll never forget.`,
         },
         {
             travelerPhoto: 'https://i.pravatar.cc/60?img=5',
-            travelerName: 'Robert Chen',
+            travelerName: 'Mark Davis',
             rating: 5,
-            reviewDate: 'Oct 03, 2024',
+            reviewDate: 'August 01, 2023',
             reviewText:
-                'Exceeded all expectations! The small group size made everything so personal. We got access to places a large tour group never could. The riads we stayed in were beautiful, and the food was phenomenal every single day.',
+                'Wanderlust Tours exceeded my expectations. The riads were charming, and the food was delicious. Only minor feedback is that some days felt a bit rushed, but overall an amazing experience.',
         },
         {
             travelerPhoto: 'https://i.pravatar.cc/60?img=9',
-            travelerName: `Sofia Martínez`,
-            rating: 4,
-            reviewDate: 'Sep 18, 2024',
+            travelerName: 'Sophia Lee',
+            rating: 5,
+            reviewDate: 'June 20, 2023',
             reviewText:
-                `A wonderful trip through Morocco's imperial cities and desert. The local guide was fantastic and gave us real insight into the culture. Only minor hiccup was a slight delay on Day 3, but overall an amazing experience I'd absolutely do again.`,
+                `From start to finish, this trip was flawlessly organized. Every detail was taken care of, allowing us to fully immerse ourselves in the beauty and culture of Morocco. Highly recommend!`,
         },
     ];
 
@@ -66,10 +69,9 @@ const TravelerReviews = ({ reviews }) => {
     return (
         <div className="reviews-section">
             <h2 className="reviews-heading">
-                Traveler Reviews
-                <span className="reviews-count">({reviewList.length})</span>
+                Traveler Reviews ({reviewList.length})
             </h2>
-            <div className="reviews-grid">
+            <div className="reviews-list">
                 {reviewList.map((review, index) => (
                     <ReviewCard key={index} {...review} />
                 ))}

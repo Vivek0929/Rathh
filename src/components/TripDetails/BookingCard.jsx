@@ -1,55 +1,75 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './TripDetails.css';
 
 const BookingCard = ({ price, tripDates, tripName }) => {
+    // 1. Setup fallback data
     const defaultDates = [
-        { from: 'Mar 15, 2025', to: 'Mar 20, 2025' },
-        { from: 'Apr 10, 2025', to: 'Apr 15, 2025' },
-        { from: 'May 5, 2025', to: 'May 10, 2025' },
+        { from: 'Aug 10', to: '15, 2024' },
+        { from: 'Sep 05', to: '10, 2024' },
+        { from: 'Oct 20', to: '25, 2024' },
+        { from: 'Nov 12', to: '17, 2024' },
     ];
 
     const dates = tripDates && tripDates.length > 0 ? tripDates : defaultDates;
+    const [selectedDate, setSelectedDate] = useState(0);
 
     const pills = ['Small Group', 'Expert Guide', 'Local Experiences'];
 
     return (
         <div className="booking-card">
-            {/* Price */}
+            {/* ── 1. Price Row ── */}
             <div className="booking-price-row">
-                <div>
-                    <span className="booking-price">${price || '1,259'}</span>
-                    <span className="booking-per-person"> / person</span>
-                </div>
+                <span className="booking-price">${price || '1,250'}</span>
+                <span className="booking-per-person">per person</span>
             </div>
 
-            {/* Pills */}
-            <div className="booking-pills">
-                {pills.map((pill, i) => (
-                    <span key={i} className="booking-pill">{pill}</span>
+            {/* ── 2. Available Dates (Pill Grid) ── */}
+            <h4 className="booking-dates-title">Available Dates</h4>
+            <div className="booking-dates-grid">
+                {dates.map((d, i) => (
+                    <button
+                        key={i}
+                        className={`booking-date-pill ${selectedDate === i ? 'booking-date-pill--active' : ''}`}
+                        onClick={() => setSelectedDate(i)}
+                    >
+                        {typeof d === 'string' ? d : `${d.from} – ${d.to}`}
+                    </button>
                 ))}
             </div>
 
-            {/* Trip Dates */}
+            {/* ── 3. Trip Dates Detail ── */}
             <div className="booking-dates-section">
-                <h4 className="booking-dates-title">Trip Dates</h4>
                 <div className="booking-dates-list">
                     {dates.map((d, i) => (
-                        <div key={i} className="booking-date-row">
+                        <div
+                            key={i}
+                            className={`booking-date-row ${selectedDate === i ? 'booking-date-row--active' : ''}`}
+                            onClick={() => setSelectedDate(i)}
+                        >
                             <span className="booking-date-icon">📅</span>
-                            <span className="booking-date-range">{d.from} – {d.to}</span>
+                            <span className="booking-date-range">
+                                {typeof d === 'string' ? d : `${d.from} – ${d.to}`}
+                            </span>
                             <span className="booking-date-badge">Available</span>
                         </div>
                     ))}
                 </div>
             </div>
 
-            {/* Book Now Button */}
-            <button className="booking-btn text-[#E2211C]">
-                <span className="booking-btn-text ">Book Now</span>
+            {/* ── 4. Book Now Button ── */}
+            <button className="booking-btn">
+                <span className="booking-btn-text">Book Now</span>
                 <span className="booking-btn-arrow">→</span>
             </button>
 
             <p className="booking-note">No payment required to reserve your spot</p>
+
+            {/* ── 5. Feature Pills ── */}
+            <div className="booking-pills">
+                {pills.map((pill, i) => (
+                    <span key={i} className="booking-pill">{pill}</span>
+                ))}
+            </div>
         </div>
     );
 };
