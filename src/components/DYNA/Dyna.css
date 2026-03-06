@@ -2,12 +2,19 @@
    DYNA - Discover Your Next Adventure Styles
    ============================================ */
 
-/* Page Container */
 .dyna-page {
     max-width: 1400px;
     margin: 0 auto;
     padding: 24px 32px;
     font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+button {
+    outline: none !important;
+}
+
+button:focus {
+    outline: none !important;
 }
 
 /* =====================
@@ -68,25 +75,76 @@
 }
 
 .dyna-search-input:focus {
-    border-color: #E2211C;
-    box-shadow: 0 0 0 2px rgba(226, 33, 28, 0.08);
+    border-color: #9ca3af;
+    box-shadow: 0 0 0 1px #9ca3af;
+}
+
+.dyna-date-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.dyna-date-icon {
+    position: absolute;
+    left: 12px;
+    color: #9ca3af;
+    pointer-events: none;
+}
+
+.dyna-date-placeholder {
+    position: absolute;
+    left: 36px;
+    color: #9ca3af;
+    pointer-events: none;
+    font-size: 0.875rem;
 }
 
 .dyna-date-input {
-    padding: 9px 12px;
+    padding: 9px 12px 9px 36px;
     border: 1px solid #d1d5db;
     border-radius: 8px;
     font-size: 0.875rem;
     outline: none;
-    min-width: 120px;
+    min-width: 140px;
     background: #fff;
     transition: border-color 0.2s;
     color: #555;
+
+    /* Hide the native calendar icon */
+    ::-webkit-calendar-picker-indicator {
+        display: none;
+        -webkit-appearance: none;
+    }
+}
+
+.dyna-date-input.empty,
+.dyna-date-input.empty::-webkit-datetime-edit,
+.dyna-date-input.empty::-webkit-datetime-edit-text,
+.dyna-date-input.empty::-webkit-datetime-edit-month-field,
+.dyna-date-input.empty::-webkit-datetime-edit-day-field,
+.dyna-date-input.empty::-webkit-datetime-edit-year-field {
+    color: transparent;
 }
 
 .dyna-date-input:focus {
-    border-color: #E2211C;
-    box-shadow: 0 0 0 2px rgba(226, 33, 28, 0.08);
+    border-color: #9ca3af;
+    box-shadow: 0 0 0 1px #9ca3af;
+    position: relative;
+    z-index: 1;
+}
+
+.dyna-date-input::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
 }
 
 .dyna-search-btn {
@@ -357,7 +415,8 @@
 }
 
 .dyna-sort-select:focus {
-    border-color: #E2211C;
+    border-color: #9ca3af;
+    box-shadow: 0 0 0 1px #9ca3af;
 }
 
 /* Cards Grid */
@@ -373,13 +432,7 @@
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-    cursor: pointer;
-}
-
-.dyna-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    transition: box-shadow 0.25s ease;
 }
 
 .dyna-card-image-wrapper {
@@ -445,11 +498,12 @@
     font-size: 0.8rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s, transform 0.2s;
 }
 
 .dyna-view-details-btn:hover {
     background-color: #c91b17;
+    transform: translateY(-2px);
 }
 
 /* =====================

@@ -37,33 +37,13 @@ const BookingCard = ({ price, tripDates, tripName }) => {
                 ))}
             </div>
 
-            {/* ── 3. Trip Dates Detail ── */}
-            {/* <div className="booking-dates-section">
-                <div className="booking-dates-list">
-                    {dates.map((d, i) => (
-                        <div
-                            key={i}
-                            className={`booking-date-row ${selectedDate === i ? 'booking-date-row--active' : ''}`}
-                            onClick={() => setSelectedDate(i)}
-                        >
-                            <span className="booking-date-icon">📅</span>
-                            <span className="booking-date-range">
-                                {typeof d === 'string' ? d : `${d.from} – ${d.to}`}
-                            </span>
-                            <span className="booking-date-badge">Available</span>
-                        </div>
-                    ))}
-                </div>
-            </div> */}
+           
 
             {/* ── 4. Book Now Button ── */}
             <button className="booking-btn">
                 <span className="booking-btn-text">Book Now</span>
                 <span className="booking-btn-arrow">→</span>
             </button>
-
-            <p className="booking-note">No payment required to reserve your spot</p>
-
             {/* ── 5. Feature Pills ── */}
             <div className="booking-pills">
                 {pills.map((pill, i) => (
