@@ -8,7 +8,7 @@
 
 /* ── Variables ───────────────────────────── */
 :root {
-    --td-our-theam-red: #E2211C;
+    --td-orange: #E87832;
     --td-orange-light: #e49b8f;
     --td-green: #22c55e;
     --td-red: #ef4444;
@@ -116,7 +116,7 @@
 .itinerary-day-label {
     font-size: 0.92rem;
     font-weight: 700;
-    color: var(--td-our-theam-red);
+    color: var(--td-orange);
     white-space: nowrap;
     min-width: 52px;
 }
@@ -228,7 +228,7 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-    background: #E2211C;
+    background: var(--td-orange);
     color: var(--td-white);
     border: none;
     border-radius: 10px;
