@@ -5,7 +5,7 @@
     justify-content: center;
     background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%);
     padding: 2rem;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .notfound-card {
