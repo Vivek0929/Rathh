@@ -656,7 +656,7 @@ button:focus {
     }
 }
 
-@media (max-width: 358px) {
+@media (max-width: 320px) {
     .dyna-cards-grid {
         grid-template-columns: repeat(1, 1fr);
     }
