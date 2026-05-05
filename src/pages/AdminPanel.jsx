@@ -596,45 +596,86 @@ function EventTab() {
     setEditing(idx);
   };
   return (
-    <div className="event-tab">
-      <h2>Manage Events</h2>
-      <form className="event-form" onSubmit={handleSubmit}>
-        <input placeholder="Event Name*" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} required />
-        <input placeholder="Date" value={form.date} onChange={e => setForm({ ...form, date: e.target.value })} />
-        <input placeholder="Location" value={form.location} onChange={e => setForm({ ...form, location: e.target.value })} />
-        <div className="refs">
-          <label>Reference Links (max 5)</label>
+    <div style={{ maxWidth: 600, margin: '0 auto', padding: 24 }}>
+      <h2 style={{ marginBottom: 18 }}>Manage Events</h2>
+      <form onSubmit={handleSubmit} style={{
+        marginBottom: 32,
+        background: '#fafaff',
+        padding: 24,
+        borderRadius: 14,
+        boxShadow: '0 2px 12px #eee',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 16
+      }}>
+        <div style={{ display: 'flex', gap: 12 }}>
+          <input placeholder="Event Name*" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} required style={{ flex: 2, padding: 10, borderRadius: 7, border: '1px solid #ccc', fontSize: 15 }} />
+          <input placeholder="Date" value={form.date} onChange={e => setForm({ ...form, date: e.target.value })} style={{ flex: 1, padding: 10, borderRadius: 7, border: '1px solid #ccc', fontSize: 15 }} />
+          <input placeholder="Location" value={form.location} onChange={e => setForm({ ...form, location: e.target.value })} style={{ flex: 2, padding: 10, borderRadius: 7, border: '1px solid #ccc', fontSize: 15 }} />
+        </div>
+        <div style={{ background: '#f5f5fa', borderRadius: 8, padding: 14, marginTop: 4 }}>
+          <label style={{ fontWeight: 500, marginBottom: 6, display: 'block' }}>Reference Links (max 5)</label>
           {form.refs.map((ref, idx) => (
-            <div key={idx} className="ref-fields">
-              <select value={ref.type} onChange={e => handleRefChange(idx, 'type', e.target.value)}>
+            <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
+              <select value={ref.type} onChange={e => handleRefChange(idx, 'type', e.target.value)} style={{ padding: 7, borderRadius: 6, border: '1px solid #ccc', fontSize: 15 }}>
                 <option value="">Type</option>
                 <option value="pic">Pic</option>
                 <option value="video">Video</option>
                 <option value="pdf">PDF</option>
                 <option value="link">Link</option>
               </select>
-              <input placeholder="URL" value={ref.url} onChange={e => handleRefChange(idx, 'url', e.target.value)} />
-              {form.refs.length > 1 && <button type="button" onClick={() => removeRef(idx)}>-</button>}
-              {idx === form.refs.length-1 && form.refs.length < 5 && <button type="button" onClick={addRef}>+</button>}
+              <input placeholder="URL" value={ref.url} onChange={e => handleRefChange(idx, 'url', e.target.value)} style={{ flex: 1, padding: 7, borderRadius: 6, border: '1px solid #ccc', fontSize: 15 }} />
+              {form.refs.length > 1 && <button type="button" onClick={() => removeRef(idx)} style={{ background: '#f44336', color: '#fff', border: 'none', borderRadius: 5, padding: '4px 10px', fontWeight: 500, cursor: 'pointer' }}>-</button>}
+              {idx === form.refs.length-1 && form.refs.length < 5 && <button type="button" onClick={addRef} style={{ background: '#6c63ff', color: '#fff', border: 'none', borderRadius: 5, padding: '4px 10px', fontWeight: 500, cursor: 'pointer' }}>+</button>}
             </div>
           ))}
         </div>
-        <button type="submit">{editing !== null ? 'Update' : 'Add'} Event</button>
+        <button type="submit" style={{
+          marginTop: 8,
+          padding: '10px 0',
+          borderRadius: 7,
+          border: 'none',
+          background: '#8b7cff',
+          color: '#fff',
+          fontWeight: 600,
+          fontSize: 16,
+          cursor: 'pointer',
+          boxShadow: '0 1px 4px #e0e0e0'
+        }}>{editing !== null ? 'Update' : 'Add'} Event</button>
       </form>
-      <h3>Current Events</h3>
-      <ul>
+      <h3 style={{ marginBottom: 12 }}>Current Events</h3>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
         {events.map((ev, idx) => (
-          <li key={ev._id || ev.id}>
-            <b>{ev.name}</b> ({ev.date}) - {ev.location}
-            <button onClick={() => editEvent(idx)}>Edit</button>
+          <div key={ev._id || ev.id} style={{
+            background: '#fff',
+            borderRadius: 10,
+            boxShadow: '0 1px 8px #f0f0f7',
+            padding: '16px 20px',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 6,
+            position: 'relative'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 10 }}>
+              <div>
+                <span style={{ fontWeight: 700, fontSize: 17 }}>{ev.name}</span>
+                <span style={{ color: '#666', fontSize: 15 }}> ({ev.date}) - {ev.location}</span>
+              </div>
+              <button onClick={() => editEvent(idx)} style={{ background: '#8b7cff', color: '#fff', border: 'none', borderRadius: 6, padding: '6px 18px', fontWeight: 500, fontSize: 15, cursor: 'pointer' }}>Edit</button>
+            </div>
             {ev.refs && ev.refs.length > 0 && (
-              <ul>
-                {ev.refs.map((r, i) => <li key={i}>{r.type}: {r.url}</li>)}
-              </ul>
+              <div style={{ marginTop: 4, marginLeft: 2 }}>
+                {ev.refs.map((r, i) => (
+                  <div key={i} style={{ fontSize: 14, color: '#444', marginBottom: 2 }}>
+                    <span style={{ fontWeight: 500, color: '#6c63ff', marginRight: 6 }}>{r.type}:</span>
+                    <a href={r.url} target="_blank" rel="noopener noreferrer" style={{ color: '#0077cc', textDecoration: 'underline' }}>{r.url}</a>
+                  </div>
+                ))}
+              </div>
             )}
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
