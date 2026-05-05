@@ -1,16 +1,31 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useSearchParams } from 'react-router-dom';
 import { API_BASE } from '../utils/apiBase';
 
 function BookingDetails() {
-  const { uuid } = useParams();
+  const params = useParams();
+  const [searchParams] = useSearchParams();
+  // Try all possible sources for booking id
+  const bookingId =
+    params.uuid ||
+    params.id ||
+    params.bookingid ||
+    searchParams.get('id') ||
+    searchParams.get('bookingid');
+
   const [booking, setBooking] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
   useEffect(() => {
+    if (!bookingId) {
+      setBooking(null);
+      setError('No booking ID provided');
+      setLoading(false);
+      return;
+    }
     setLoading(true);
-    fetch(`${API_BASE}/bookingdetails/${uuid}`)
+    fetch(`${API_BASE}/bookingdetails/${bookingId}`)
       .then(res => {
         if (!res.ok) throw new Error('Not found');
         return res.json();
@@ -24,7 +39,7 @@ function BookingDetails() {
         setError('Booking not found');
       })
       .finally(() => setLoading(false));
-  }, [uuid]);
+  }, [bookingId]);
 
   if (loading) return <div style={{ padding: 40 }}>Loading...</div>;
   if (error) return <div style={{ padding: 40, color: 'red' }}>{error}</div>;

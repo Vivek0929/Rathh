@@ -20,6 +20,9 @@ function App() {
       <Route path="/tripdetails/:id" element={<TripDetailsPage />} />
       <Route path="/admin" element={<AdminPanel />} />
       <Route path="/booking/:uuid" element={<BookingDetails />} />
+      <Route path="/booking/id/:bookingid" element={<BookingDetails />} />
+      <Route path="/booking/:id" element={<BookingDetails />} />
+      <Route path="/booking" element={<BookingDetails />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   )
