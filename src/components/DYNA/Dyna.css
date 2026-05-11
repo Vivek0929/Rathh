@@ -875,13 +875,10 @@ button:focus {
         background: #E2211C; /* Site's theme red */
     }
 
-    .dyna-cards-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
 }
 
-/* Mobile Large */
-@media (max-width: 640px) {
+/* Single column up to 550px */
+@media (max-width: 550px) {
     .dyna-page {
         padding: 16px 12px;
     }
@@ -914,21 +911,59 @@ button:focus {
     }
 
     .dyna-cards-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
         gap: 12px;
+        justify-items: center;
     }
 
     .dyna-card-image-wrapper {
         height: 130px;
     }
+
+    .dyna-card {
+        width: min(100%, 390px);
+        margin: 0 auto;
+    }
+
+    .dyna-content {
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
+@media (min-width: 421px) and (max-width: 550px) {
+    .dyna-page {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .dyna-cards-grid {
+        justify-content: center;
+    }
+
+    .dyna-card {
+        width: min(100%, 340px);
+        margin-inline: auto;
+    }
+}
+
+/* Fixed card sizing above 550px */
+@media (min-width: 551px) {
+    .dyna-cards-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        justify-content: center;
+    }
+}
+
+@media (min-width: 551px) and (max-width: 768px) {
+    .dyna-cards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
 }
 
 /* Mobile Small */
 @media (max-width: 420px) {
-    .dyna-cards-grid {
-        grid-template-columns: 1fr;
-    }
-
     .dyna-destination-wrapper {
         flex-direction: column;
     }
