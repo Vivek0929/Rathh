@@ -1,0 +1,53 @@
+name: Build and Push Dist
+
+on:
+  push:
+    branches-ignore:
+      - '*-vitebuild-dist-output' # Avoid infinite loops by not triggering on the output branches
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Needed to push the new branch
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci || npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Push dist to new branch
+        run: |
+          # Get the branch that triggered the workflow
+          BRANCH_NAME=${GITHUB_REF#refs/heads/}
+          TARGET_BRANCH="${BRANCH_NAME}-vitebuild-dist-output"
+          
+          # Configure Git credentials
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Move into the build output directory
+          cd dist
+          
+          # Initialize a fresh git repository just for the built files
+          git init
+          git checkout -b "$TARGET_BRANCH"
+          
+          # Add and commit the built files
+          git add .
+          git commit -m "chore: auto-build from branch $BRANCH_NAME"
+          
+          # Add remote and force push (overwrites the previous build for this branch)
+          git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+          git push -f origin "$TARGET_BRANCH"
